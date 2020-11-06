@@ -252,11 +252,6 @@ typedef struct _usb_device_hid_keyboard_struct
  * API
  ******************************************************************************/
 
-extern usb_status_t USB_DeviceHidKeyboardInit(usb_device_composite_struct_t *deviceComposite);
-extern usb_status_t USB_DeviceHidKeyboardCallback(class_handle_t handle, uint32_t event, void *param);
-extern usb_status_t USB_DeviceHidKeyboardSetConfigure(class_handle_t handle, uint8_t configure);
-extern usb_status_t USB_DeviceHidKeyboardSetInterface(class_handle_t handle,
-                                                      uint8_t interface,
-                                                      uint8_t alternateSetting);
+
 
 #endif /* __USB_DEVICE_HID_KEYBOARD_H__ */
