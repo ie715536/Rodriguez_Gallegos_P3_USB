@@ -1,1 +1,4 @@
 # Rodriguez_Gallegos_P3_USB
+Para la implementación de el hid para keyboard y para mouse lo que hicimos fue realizar el report descriptor para ambos en conjunto, colocando el report id (iniciando en 1) para el mouse y para el teclado, esto quiere decir que ambos comparten un mismo endpoint. Para enviar el boffer ya sea del mouse y del teclado se utilzaron entonces dos de estos. Se creo un buffer para mouse de tamaño 5, que sería Report ID, botton, eje x, eje y, scroll, y se creo un buffer para teclado de 9, que sería Report ID, modificador, reservada, y el resto de los espacios para teclas presionadas. 
+
+La aplicación utiliza una maquina de estados para modificar los buffer de estados del teclado y mouse virtual que se transmiten por el puerto USB. Los estados en esta maquina poseen un identificador para conocer que dispositivo es el que se busca actualizar, una variable que define el tiempo de espera, y el estado del buffer que se deasea enviar.
