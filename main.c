@@ -244,7 +244,7 @@ static usb_status_t USB_DeviceHidMouseAction(void)
 			return kStatus_USB_Busy;
 
 		if(KEYBOARD == usbStates[stateId].device){
-			for(i = 0; i<9; i++)
+			for(i = 1; i<9; i++)
 				g_UsbDeviceHidMouse.buffer_key[i] = 0x00;
 		}
 
@@ -263,11 +263,11 @@ static usb_status_t USB_DeviceHidMouseAction(void)
 		delay = 0;
 
 		if(KEYBOARD == usbStates[stateId].device){
-			for(i =0; i<9; i++)
+			for(i = 0; i<9; i++)
 				g_UsbDeviceHidMouse.buffer_key[i] = usbStates[stateId].buffer[i];
 		}
 		else{
-			for(i = 0; i<5; i++)
+			for(i = 1; i<5; i++)
 				g_UsbDeviceHidMouse.buffer[i] = 0x00;
 		}
 	}
