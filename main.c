@@ -217,7 +217,6 @@ static usb_status_t USB_DeviceHidMouseAction(void)
 			if (z < 1U)
 			{
 				dir++;
-				g_UsbDeviceHidMouse.buffer_key[1] = 0x00U;
 				g_UsbDeviceHidMouse.buffer_key[0] = 0x02U;
 				g_UsbDeviceHidMouse.buffer_key[3] = KEY_P;
 			}
@@ -271,6 +270,7 @@ static usb_status_t USB_DeviceHidMouseAction(void)
 			delay++;
 			if (delay > 2000U)
 			{
+				g_UsbDeviceHidMouse.buffer_key[0] = 0U;
 				dir++;
 			}
 			break;
